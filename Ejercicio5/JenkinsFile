@@ -15,7 +15,7 @@ pipeline
                     def potencia=suma**2
                     def fileContent=sprintf("Resultado de la suma: %d\r\nResultado de la potencia: %d", suma, potencia)
                     
-                    printlf fileContent
+                    println fileContent
                     
                     writeFile(file: "salida.txt", text: fileContent)
                 }
