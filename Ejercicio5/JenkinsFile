@@ -1,0 +1,23 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage ("Creacion de Archivo")
+        {
+            steps
+            {
+                script
+                {
+                    def operando1 = 2
+                    def operando2 = 2
+                    def suma=operando1 * operando2
+                    def potencia=suma**2
+                    def fileContent=sprintf("Resultado de la suma: %d\r\nResultado de la potencia: %d", suma, potencia)
+                    
+                    writeFile(file: "salida.txt", text: fileContent)
+                }
+            }
+        }
+    }
+}
